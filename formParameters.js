@@ -1433,12 +1433,13 @@ function createRandomForm() {
  *
  * @returns {string} The URL of the newly created random Google Form.
  */
-function createProcessForm() {
+function createProcessForm(searchString) {
   // --- Configuration for randomness ---
+  var executed = 0;
   const FORM_TITLES = searchString
     ? Array(searchString)
     : functionRegistry.fileList;
-  console.log("FORM_TITLES",executed++);
+  console.log("FORM_TITLES = " + FORM_TITLES, executed++);
   const FORM_DESCRIPTIONS = [
     "A randomly generated script to gather insights.",
     "Please fill out this script at your leisure. Content is randomized.",
@@ -1481,7 +1482,9 @@ function createProcessForm() {
   const sectionHeaderItem = userSubmit
     .addSectionHeaderItem()
     .setTitle(questionTitle + " (New Section)");
+  const imageItem = userSubmit;
   const imgFile = six.seoPictTime(formTitle, functionRegistry.time)?.playList;
+  console.log("imgFile = " + imgFile, executed++);
   let rndfileImage =
     imgFile[Math.floor(Math.random() * Math.floor(imgFile.length))];
   if (rndfileImage) {

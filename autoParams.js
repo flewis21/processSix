@@ -269,7 +269,7 @@ const functionRegistry = {
 };
 
 // Set some global variables
-console.log("boilerplate autoParams: line 175");
+console.log("boilerplate autoParams: line 272");
 functionRegistry.initialize();
-console.log("boilerplate autoParams: line 177");
+console.log("boilerplate autoParams: line 274");
 functionRegistry.startProcessTimer();
